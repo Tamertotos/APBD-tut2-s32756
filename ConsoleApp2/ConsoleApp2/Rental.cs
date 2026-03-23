@@ -16,5 +16,6 @@ public abstract class Rental
     public abstract bool rentEquipment(Equipment equipment);
     public abstract bool IsOnTime(DateTime RentDate);
     public abstract String ReturnEquipment(Equipment equipment);
+    public abstract List<Equipment> GetEquipments();
 
 }

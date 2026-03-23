@@ -57,6 +57,11 @@ public class TeacherRental: Rental
         //No payment required since this person is teacher
         return " Try returning the equipment on time!";
     }
+
+    public override List<Equipment> GetEquipments()
+    {
+        return rented;
+    }
     
     public override string ToString()
     {

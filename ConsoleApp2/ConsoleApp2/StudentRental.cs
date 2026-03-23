@@ -61,6 +61,11 @@ public class StudentRental : Rental
 
         return "You have to pay " + payment;
     }
+    
+    public override List<Equipment> GetEquipments()
+    {
+        return rented;
+    }
 
 
     public override string ToString()
