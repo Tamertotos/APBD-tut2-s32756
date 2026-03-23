@@ -1,19 +1,18 @@
 namespace ConsoleApp2;
 
-public class StudentRental : Rental
+public class TeacherRental: Rental
 {
-    
     List<Equipment> rented = new List<Equipment>();
     public int RentLimit { get; set; }
-    
-    public StudentRental(User user, Equipment equipment, DateTime rentDate) : base(user, equipment, rentDate)
+
+    public TeacherRental(User user, Equipment equipment, DateTime rentDate) : base(user, equipment, rentDate)
     {
         rentEquipment(equipment);
     }
     
     public override bool rentEquipment(Equipment equipment)
     {
-        if (User.rentCount < 2 && Equipment.IsAvailable && IsOnTime(RentDate))
+        if (User.rentCount < 5 && Equipment.IsAvailable && IsOnTime(RentDate))
         {
             User.rentCount++;
             equipment.IsAvailable = false;
@@ -27,10 +26,10 @@ public class StudentRental : Rental
             return false;
         }
     }
-
+    
     public override bool IsOnTime(DateTime RentDate)
     {
-        int rentLimit = 15;
+        int rentLimit = 30;
         bool isRentable = true;
         if (RentDate.AddDays(rentLimit) < DateTime.Now)
         {
@@ -39,12 +38,9 @@ public class StudentRental : Rental
         }
         return isRentable;
     }
-
+    
     public override String ReturnEquipment(Equipment equipment)
     {
-        int rentLimit = 15;
-        double payment = 0.0;
-        int passedDay = (DateTime.Now - RentDate.AddDays(rentLimit)).Days;
         if (IsOnTime(RentDate))
         {
             Console.WriteLine("Thank you for timely returnal.");
@@ -53,18 +49,17 @@ public class StudentRental : Rental
         }
         else
         {
-            payment = 1.5 * passedDay;
-            Console.WriteLine("You have to pay for overdue");
+            Console.WriteLine("You have an overdue");
             equipment.IsAvailable = true;
             User.rentCount--;
         }
 
-        return "You have to pay " + payment;
+        //No payment required since this person is teacher
+        return " Try returning the equipment on time!";
     }
-
-
+    
     public override string ToString()
     {
-        return User.Name + " has rented " + rented.Count + " equipments";
+        return User.Name + "[" + User.Type + "] has rented " + rented.Count + " equipments";
     }
 }

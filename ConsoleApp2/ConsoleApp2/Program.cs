@@ -13,6 +13,9 @@ public class Program
             new Camera("Sony",false,599,"nikkon",5)
         };
         
+        Console.WriteLine(equipments[0].InstanceId);
+        Console.WriteLine(equipments[1].InstanceId);
+        
         InventoryList inventory = new InventoryList();
         for (int i = 0; i < equipments.Length; i++)
         {
@@ -26,5 +29,14 @@ public class Program
         Console.WriteLine(rent1.ToString());
         rent1.IsOnTime(DateTime.Now);
         rent1.ReturnEquipment(equipments[1]);
+
+        User teacherUser = new User("Krisztof",40, "B.","Teacher");
+        Rental rent2 = new TeacherRental(teacherUser,equipments[1],new DateTime(2026,03,03));
+        Console.WriteLine(rent2.ToString());
+        Console.WriteLine(rent2.IsOnTime(DateTime.Now));
+        Console.WriteLine(rent2.ReturnEquipment(equipments[1]));
+        
+        Console.WriteLine(teacherUser.InstanceId);
+        Console.WriteLine(userStudent.InstanceId);
     }
 }

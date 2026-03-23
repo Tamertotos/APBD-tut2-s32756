@@ -13,7 +13,7 @@ public abstract class Rental
         RentDate = rentDate;
     }
     
-    public abstract void rentEquipment(Equipment equipment);
+    public abstract bool rentEquipment(Equipment equipment);
     public abstract bool IsOnTime(DateTime RentDate);
     public abstract String ReturnEquipment(Equipment equipment);
 

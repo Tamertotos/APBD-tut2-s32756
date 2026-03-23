@@ -6,10 +6,11 @@ public abstract class Equipment
     protected static int Id = 0;
     public bool IsAvailable { get; set;  }
     public int Price { get; set; }
+    public int InstanceId { get; set; }
 
-    public Equipment(string name, bool isAvailable, int price)
+    public Equipment(string name, bool isAvailable, int price )
     {
-        Id++;
+        InstanceId = ++Id;
         Name = name;
         IsAvailable = isAvailable;
         Price = price;
