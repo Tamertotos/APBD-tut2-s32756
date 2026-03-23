@@ -13,8 +13,7 @@ public abstract class Rental
         RentDate = rentDate;
     }
 
-    public abstract bool canRent(Equipment equipment);
-    public abstract Equipment rentEquipment(Equipment equipment);
+    //public abstract bool canRent(Equipment equipment);
+    public abstract List<Equipment> rentEquipment(Equipment equipment);
     
-
 }

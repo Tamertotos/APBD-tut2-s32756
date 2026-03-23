@@ -11,4 +11,9 @@ public class Book : Equipment
         Author = author;
         Genre = genre;
     }
+
+    public override string ToString()
+    {
+        return Name;
+    }
 }

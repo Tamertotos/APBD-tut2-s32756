@@ -10,4 +10,9 @@ public class Laptop : Equipment
         GPU = gpu;
         RAM = ram;
     }
+    
+    public override string ToString()
+    {
+        return Name;
+    }
 }
