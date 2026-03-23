@@ -14,4 +14,5 @@ public abstract class Equipment
         IsAvailable = isAvailable;
         Price = price;
     }
+    
 }
