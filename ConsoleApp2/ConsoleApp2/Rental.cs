@@ -14,6 +14,6 @@ public abstract class Rental
     }
 
     //public abstract bool canRent(Equipment equipment);
-    public abstract List<Equipment> rentEquipment(Equipment equipment);
+    public abstract void rentEquipment(Equipment equipment);
     
 }

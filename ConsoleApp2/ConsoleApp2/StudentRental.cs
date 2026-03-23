@@ -10,16 +10,22 @@ public class StudentRental : Rental
         rentEquipment(equipment);
     }
     
-    public override List<Equipment> rentEquipment(Equipment equipment)
+    public override void rentEquipment(Equipment equipment)
     {
-        if (User.rentCount < 2)
+        if (User.rentCount < 2 && Equipment.IsAvailable)
         {
             User.rentCount++;
+            equipment.IsAvailable = false;
             rented.Add(equipment);
+            Console.WriteLine(equipment + " is rented to" + User.Name);
+        }
+        else
+        {
+            Console.WriteLine(equipment + " is already in rent or cannot be rented");
         }
 
         
-        return rented;
+        
     }
 
 
