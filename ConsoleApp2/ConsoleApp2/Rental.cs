@@ -12,9 +12,9 @@ public abstract class Rental
         Equipment = equipment;
         RentDate = rentDate;
     }
-
-    //public abstract bool canRent(Equipment equipment);
+    
     public abstract void rentEquipment(Equipment equipment);
-    public abstract void OverDue(DateTime RentDate);
+    public abstract bool IsOnTime(DateTime RentDate);
+    public abstract String ReturnEquipment(Equipment equipment);
 
 }

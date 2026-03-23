@@ -22,9 +22,9 @@ public class Program
         inventory.DisplayDamagedEquipments();
 
         User userStudent = new User("Tamer", 24, "Can", "Student");
-        Rental rent1 = new StudentRental(userStudent,equipments[1],new DateTime(2026,01,01));
+        Rental rent1 = new StudentRental(userStudent,equipments[1],DateTime.Now);
         Console.WriteLine(rent1.ToString());
-        rent1.OverDue(new DateTime(2026,01,01));
-
+        rent1.IsOnTime(DateTime.Now);
+        rent1.ReturnEquipment(equipments[1]);
     }
 }
