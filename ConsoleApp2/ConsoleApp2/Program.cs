@@ -14,7 +14,7 @@ public class Program
             new Book("Network", true, 10, "Someone", "Science")
         };
         
-        /*
+        
         InventoryList inventory = new InventoryList();
         for (int i = 0; i < equipments.Length; i++)
         {
@@ -22,7 +22,9 @@ public class Program
         }
         inventory.DisplayEquipments();
         inventory.DisplayDamagedEquipments();
-        */
+        
+        Console.WriteLine("_ _ _ _ _ _ _ _ _ _ _ _");
+        
         
         User userStudent = new User("Tamer", 24, "Can", "Student");
         Rental rent1 = new StudentRental(userStudent,equipments[1],DateTime.Now);
@@ -46,10 +48,11 @@ public class Program
             }
         }
         
-        
         Console.WriteLine(rent3.ToString());
         rent1.IsOnTime(DateTime.Now);
         rent1.ReturnEquipment(equipments[1]);
+        
+        Console.WriteLine("_ _ _ _ _ _ _ _ _ _ _ _");
 
         User teacherUser = new User("Krisztof",40, "B.","Teacher");
         Rental rent2 = new TeacherRental(teacherUser,equipments[1],new DateTime(2026,03,03));

@@ -15,7 +15,15 @@ public class User
         Name = name;
         Age = age;
         Surname = surname;
-        Type = type;
+
+        if (type == "Student")
+        {
+            Type = type;    
+        } else if (type == "Teacher")
+        {
+            Type = type;
+        } else throw new ArgumentException("Please provide a correct type. Either Student or Teacher");
+        
         InstanceId = ++Id;
     }
 
