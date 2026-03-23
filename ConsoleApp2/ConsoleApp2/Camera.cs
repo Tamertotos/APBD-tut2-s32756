@@ -15,4 +15,5 @@ public class Camera : Equipment
     {
         return Name;
     }
+    
 }

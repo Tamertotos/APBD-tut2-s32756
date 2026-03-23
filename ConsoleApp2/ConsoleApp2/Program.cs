@@ -1,3 +1,5 @@
+using System.Security.AccessControl;
+
 namespace ConsoleApp2;
 
 public class Program
@@ -17,12 +19,12 @@ public class Program
             inventory.AddEquipment(equipments[i]);
         }
         inventory.DisplayEquipments();
+        inventory.DisplayDamagedEquipments();
 
-        User user1 = new User("Tamer", 25, "Can", "Student");
-        Rental rental1 = new StudentRental(user1,equipments[0],new DateTime(2025,3,3));
-        Rental rental2 = new StudentRental(user1,equipments[1],new DateTime(2025,3,3));
-        Rental rental3 = new StudentRental(user1,equipments[2],new DateTime(2025,3,3));
-        Rental rental4 = new StudentRental(user1,equipments[0],new DateTime(2025,3,3));
-       
+        User userStudent = new User("Tamer", 24, "Can", "Student");
+        Rental rent1 = new StudentRental(userStudent,equipments[1],new DateTime(2026,01,01));
+        Console.WriteLine(rent1.ToString());
+        rent1.OverDue(new DateTime(2026,01,01));
+
     }
 }

@@ -15,5 +15,6 @@ public abstract class Rental
 
     //public abstract bool canRent(Equipment equipment);
     public abstract void rentEquipment(Equipment equipment);
-    
+    public abstract void OverDue(DateTime RentDate);
+
 }

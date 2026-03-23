@@ -19,6 +19,15 @@ public class InventoryList
         }
     }
 
- 
+    public void DisplayDamagedEquipments()
+    {
+        for (int i = 0; i < equipments.Count; i++)
+        {
+            if (equipments[i].IsAvailable == false)
+            {
+                Console.WriteLine(equipments[i].ToString() + " Cannot be rented due to some problem");
+            }
+        }
+    }
     
 }

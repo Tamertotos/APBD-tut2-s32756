@@ -4,6 +4,7 @@ public class StudentRental : Rental
 {
     
     List<Equipment> rented = new List<Equipment>();
+    public int RentLimit { get; set; }
     
     public StudentRental(User user, Equipment equipment, DateTime rentDate) : base(user, equipment, rentDate)
     {
@@ -23,19 +24,20 @@ public class StudentRental : Rental
         {
             Console.WriteLine(equipment + " is already in rent or cannot be rented");
         }
+    }
 
-        
-        
+    public override void OverDue(DateTime RentDate)
+    {
+        int rentLimit = 15;
+        if (RentDate.Month * 30 + (RentDate.Day) - rentLimit <= rentLimit)
+        {
+            Console.WriteLine("You have an overdue");
+        }
     }
 
 
     public override string ToString()
     {
-        if (rented.Count > 0)
-        {
-            return  User + " rented: " + rented[0];      
-        }
-
-        return "You reached your rent limitation";
+        return User.Name + " has rented " + rented.Count + " equipments";
     }
 }
